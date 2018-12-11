@@ -11,5 +11,11 @@ namespace WPF.Exercises.View
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var aboutWindow = new About();
+            aboutWindow.Show();
+        }
     }
 }
