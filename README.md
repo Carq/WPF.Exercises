@@ -1,30 +1,47 @@
 # Zadanie 1. - Binding i kontrolki
 
-## 1.1 Wyświetl informacje o samochodzie na MainWindow według poniższego mocka:
+### 1.1 Wyświetl informacje o samochodzie na MainWindow według poniższego mocka:
 
 ![1.1](https://i.ibb.co/SKMvrXP/E01-01.png)
 
-## 1.2 Uaktualnij Header (Mondeo, Ford) po zmianie wartości w TextBoxach
+* Zastanów się czy używać klasy CarDto
 
-## 1.3 Po kliknięciu w guzik "About" otwórz okno About
+### 1.2 Uaktualnij Header (Mondeo, Ford) po zmianie wartości w TextBoxach
 
-## \*1.4 Pole "Date of last inspection" wyświetl w formacie dd.MM.yyyy - robiąc zmiany tylko w pliku .xaml
+* Ustaw breakpointa w set dla propercji Brand lub Model
+* Zmieniaj wartości w TextBoxach
+* Kiedy wartości dla Brand lub Model są ustawione w ViewModelu?
+
+### 1.3 Po kliknięciu w guzik "About" otwórz okno About
+
+* Kontrolki mają eventy do których można się podpiać
+
+```xml
+<Button Click="Button_Click" Content="Click me" />
+```
+
+### \*1.4 Pole "Date of last inspection" wyświetl w formacie dd.MM.yyyy - robiąc zmiany tylko w pliku .xaml
+
+* Sprawdź jakie inne wałściwości ma Binding poza Mode
+```xml
+"{Binding DateOfLastInspection, Mode=OneWay}"
+```
 
 # Cheat sheet
 
-## Podstawowe kontrolki
+### Podstawowe kontrolki
 
 ```xml
 <TextBlock Margin="5" HorizontalAlignment="Right" Text="Hello wordld" />
 
-<TextBox Text="{Binding DateOfLastInspection, Mode=OneWay" />
+<TextBox Text="{Binding DateOfLastInspection, Mode=OneWay}" />
 
 <CheckBox IsChecked="{Binding IsUsed}" />
 
 <Button Width="100" Height="30" Content="Click me" />
 ```
 
-## Kontrolki grupujące
+### Kontrolki grupujące
 
 ```xml
 <StackPanel Orientation="Vertical">
