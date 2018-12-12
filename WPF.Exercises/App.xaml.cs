@@ -36,7 +36,7 @@ namespace WPF.Exercises
 
         private void RegisterServices(ContainerBuilder builder)
         {
-            builder.RegisterType<FleetService>();
+            builder.RegisterInstance(new FleetService());
         }
 
         private void RegisterAllViews(ContainerBuilder builder, Assembly currentAssembly)

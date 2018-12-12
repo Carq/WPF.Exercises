@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WPF.Exercises.Service.Dto;
 
 namespace WPF.Exercises.Service
@@ -31,6 +32,7 @@ namespace WPF.Exercises.Service
                 throw new ArgumentException("Model cannot be empty");
             }
 
+            carDto.Id = _cars.Max(x => x.Id) + 1;
             _cars.Add(carDto);
         }
 
