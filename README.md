@@ -1,25 +1,25 @@
-# Zadanie 4. - Konwertery
+# Zadanie 5. - Filtrowanie
 
-## 4.1 Stwórz konverter zamieniejący date na kolor
+## 5.1 Na MainWindow pozwól na filtrowanie samochodów
 
-- Na oknie AddNewCar zmieniaj kolor czcionki DatePickera w zależności od tego jak odległa data została wybrana dla DateOfLastInspection
+- Dodaj TextBox po lewej stronie guzików
+- Dodaj filtrowanie po modelu, marce i dacie przeglądu
 
-## 4.2 Przekaż do Convertera parametr i użyj go
-
-- Niech Converter w zależności od podanego parametru (typu bool) koloruje na różne sposoby (ciemniejsze kolory lub jaśniejsze).
+## 5.2 Użyj właściwości Delay dla bindingu
 
 # Cheat sheet
 
-## Definiowanie convertera w XAML
+## ListCollectionView
 
-```xml
-<Window.Resources>
-    <converters:NullToVisiblityConverter x:Key="NullToVisiblityConverter" />
-</Window.Resources>
+```csharp
+ICollectionView collection = new ListCollectionView()
+                                {
+                                    Filter = ...
+                                };
 ```
 
-## Używanie Convertera
+## Delay Binding
 
 ```xml
- <Button Visibility="{Binding IsActive, Converter={StaticResource NullToVisiblityConverter, ConverterParameter=true}}" />
+ <TextBox Text="{Binding Text, Delay=1000}" />
 ```
