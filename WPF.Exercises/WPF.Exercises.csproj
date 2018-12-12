@@ -76,6 +76,7 @@
     <Compile Include="Converters\DateToColorConverter.cs" />
     <Compile Include="Framework\INavigationService.cs" />
     <Compile Include="Framework\SimpleNavigationService.cs" />
+    <Compile Include="Framework\StringExtensions.cs" />
     <Compile Include="Service\Dto\Car.cs" />
     <Compile Include="Service\Dto\CarList.cs" />
     <Compile Include="Service\FleetService.cs" />

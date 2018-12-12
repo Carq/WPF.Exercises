@@ -18,7 +18,13 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-
+            <TextBox
+                Width="250"
+                Height="30"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                FontSize="15"
+                Text="{Binding SearchInput, UpdateSourceTrigger=PropertyChanged, Delay=300}" />
             <Button
                 Width="100"
                 Height="30"
@@ -44,7 +50,7 @@
             Margin="5"
             AutoGenerateColumns="False"
             IsReadOnly="True"
-            ItemsSource="{Binding Cars}"
+            ItemsSource="{Binding CarsFiltered}"
             SelectionMode="Single">
 
             <DataGrid.Columns>
