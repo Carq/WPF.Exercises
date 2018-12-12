@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\DateToColorConverter.cs" />
     <Compile Include="Framework\INavigationService.cs" />
     <Compile Include="Framework\SimpleNavigationService.cs" />
     <Compile Include="Service\Dto\Car.cs" />
