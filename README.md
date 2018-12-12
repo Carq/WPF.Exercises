@@ -1,6 +1,6 @@
 # Zadanie 4. - Konwertery
 
-## 4.1 Stwórz konverter zamieniejący date na kolor
+## 4.1 Stwórz konwerter zamieniejący date na kolor
 
 - Na oknie AddNewCar zmieniaj kolor czcionki DatePickera w zależności od tego jak odległa data została wybrana dla DateOfLastInspection
 
