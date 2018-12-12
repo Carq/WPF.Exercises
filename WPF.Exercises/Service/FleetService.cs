@@ -17,7 +17,7 @@ namespace WPF.Exercises.Service
         private void GenerateFakeData()
         {
             var fakeDate = DateTime.Now.AddYears(-1);
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 50; i++)
             {
                 var fakeCar = CarList.Cars[i % CarList.Count];
                 _cars.Add(new CarDto
@@ -26,7 +26,7 @@ namespace WPF.Exercises.Service
                     Brand = fakeCar.Brand,
                     Model = fakeCar.Model,
                     Photo = fakeCar.Photo,
-                    DateOfLastInspection = fakeDate.AddDays(i * 3).AddMinutes(i * 7),
+                    DateOfLastInspection = fakeDate.AddDays(i * 3).AddMinutes(i * 31),
                     IsUsed = i % 2 == 0
                 });
             }
