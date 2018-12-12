@@ -73,16 +73,14 @@
             Grid.Column="2"
             Width="120"
             Margin="5"
-            HorizontalAlignment="Left"
-            Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged}" />
+            HorizontalAlignment="Left" />
 
         <TextBox
             Grid.Row="3"
             Grid.Column="2"
             Width="120"
             Margin="5"
-            HorizontalAlignment="Left"
-            Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}" />
+            HorizontalAlignment="Left" />
 
         <DatePicker
             Grid.Row="4"

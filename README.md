@@ -11,7 +11,11 @@
 - Użyj interface IDataErrorInfo w klasie AddNewCarViewModel
 - Przy nie poprawnych danych guzik Save powinnien być wyszarzony
 
-## \*3.3 Usuń zależność na klase Window w AddNewCarViewModel (SaveCommand)
+## \*3.3 Jeżeli zapis w FleetService się nie powiedzie wyświetl komunikat o błedzie
+
+- W jaki sposób można to zrobić aby nie używać bezpośrednio MessageBox w ViewModelu?
+
+## \*3.4 Usuń zależność na klase Window w AddNewCarViewModel (SaveCommand)
 
 # Cheat sheet
 
@@ -19,4 +23,10 @@
 
 ```xml
 <TextBox Text="{Binding Name, ValidatesOnDataErrors=True}" />
+```
+
+## DatePicker
+
+```xml
+<DatePicker SelectedDate="{Binding ..."/>
 ```
