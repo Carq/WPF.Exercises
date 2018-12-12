@@ -1,6 +1,6 @@
 # Zadanie 3. - Walidacja danych
 
-## 3.1 W nowym oknie AddNewCar zaimplementuj funkcjonalność dodawania nowego samochodu.
+## 3.1 W nowym oknie AddNewCar zaimplementuj funkcjonalność dodawania nowego samochodu
 
 - Po kliknieciu przycisku Add Car na MainWindow otwórz nowe okno AddNewCar (użyj klasy SimpleNavigationService)
 - Zwróć szczególną uwagę na właściwość DateOfLastInspection (co jest domyślnie wyświetlane na widoku po otwarciu okna?)
@@ -11,7 +11,7 @@
 
 - Użyj interface IDataErrorInfo w klasie AddNewCarViewModel
 - Ustaw różne wartości UpdateSourceTrigger przy bindingu, kiedy walidacja jest odpalana?
-- Przy nie poprawnych danych guzik Save powinnien być wyszarzony
+- Przy niepoprawnych danych guzik Save powinnien być wyszarzony
 
 ## \*3.3 Jeżeli zapis w FleetService się nie powiedzie wyświetl komunikat o błedzie
 
