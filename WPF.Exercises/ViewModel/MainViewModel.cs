@@ -1,6 +1,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
+using WPF.Exercises.Framework;
 using WPF.Exercises.Service;
 using WPF.Exercises.Service.Dto;
 
@@ -10,13 +11,17 @@ namespace WPF.Exercises.ViewModel
     {
         private readonly FleetService _fleetService;
 
-        public MainViewModel(FleetService fleetService)
+        private readonly INavigationService _navigationService;
+
+        public MainViewModel(FleetService fleetService, INavigationService navigationService)
         {
             _fleetService = fleetService;
+            _navigationService = navigationService;
             Cars = new ObservableCollection<CarDto>(_fleetService.GetAllCars());
             CleanCommand = new RelayCommand(CleanCars, CanClearCars);
             LoadCommand = new RelayCommand(Load, CanLoad);
             AddNewCarCommand = new RelayCommand(AddNewCar);
+            
         }
 
         private bool CanClearCars()
@@ -42,12 +47,8 @@ namespace WPF.Exercises.ViewModel
 
         private void AddNewCar()
         {
-            Cars.Add(new CarDto
-            {
-                Id = 999,
-                Brand = "Fiat",
-                Model = "126p"
-            });
+            _navigationService.Open<AddNewCarViewModel>();
+            Load();
         }
 
         public ObservableCollection<CarDto> Cars { get; set; }

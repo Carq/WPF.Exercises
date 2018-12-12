@@ -15,14 +15,13 @@
     mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="180" />
+            <RowDefinition Height="170" />
             <RowDefinition Height="5" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
@@ -40,6 +39,7 @@
         <TextBlock
             Grid.Row="2"
             Grid.ColumnSpan="3"
+            Margin="5"
             HorizontalAlignment="Center"
             FontSize="16"
             FontWeight="Bold"
@@ -74,21 +74,24 @@
             Grid.Column="2"
             Width="120"
             Margin="5"
-            HorizontalAlignment="Left" />
+            HorizontalAlignment="Left"
+            Text="{Binding Brand, ValidatesOnDataErrors=True}" />
 
         <TextBox
             Grid.Row="4"
             Grid.Column="2"
             Width="120"
             Margin="5"
-            HorizontalAlignment="Left" />
+            HorizontalAlignment="Left"
+            Text="{Binding Model, ValidatesOnDataErrors=True}" />
 
         <DatePicker
             Grid.Row="5"
             Grid.Column="2"
             Width="120"
             Margin="5"
-            HorizontalAlignment="Left" />
+            HorizontalAlignment="Left"
+            SelectedDate="{Binding DateOfLastInspection, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
 
         <CheckBox
             Grid.Row="6"
