@@ -1,4 +1,4 @@
-# Zadanie 2. - Obsługa zdarzeń i walidacja danych
+# Zadanie 2. - Obsługa zdarzeń
 
 ## 2.1 Wyświetl spis samochodów według poniższego mocka:
 
@@ -6,7 +6,7 @@
 
 - MainViewModel posiada teraz właściwość która jest kolekcją obiektów CarDto typu ObservableCollection - jest ona odpowiedzialna za odświeżanie widoku gdy element zostanie dodany lub usunięty
 - Użyj kontroli DataGrid (opis w Cheet Scheet)
-- Wiersze DataGrid nie powinny być edytowalne
+- Wiersze DataGrid nie powinny być edytowalny
 
 ### 2.2 Dodaj Command do przycisków Clear i Load
 
