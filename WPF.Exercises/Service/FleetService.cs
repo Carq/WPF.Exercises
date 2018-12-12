@@ -6,20 +6,35 @@ namespace WPF.Exercises.Service
 {
     public class FleetService
     {
+        private readonly IList<CarDto> _cars;
+
+        public FleetService()
+        {
+            _cars = new List<CarDto>();
+            GenerateFakeData();
+        }
+
+        private void GenerateFakeData()
+        {
+            var fakeDate = DateTime.Now.AddYears(-1);
+            for (int i = 0; i < 30; i++)
+            {
+                var fakeCar = CarList.Cars[i % CarList.Count];
+                _cars.Add(new CarDto
+                {
+                    Id = i + 1,
+                    Brand = fakeCar.Brand,
+                    Model = fakeCar.Model,
+                    Photo = fakeCar.Photo,
+                    DateOfLastInspection = fakeDate.AddDays(i * 3).AddMinutes(i * 7),
+                    IsUsed = i % 2 == 0
+                });
+            }
+        }
+
         public IList<CarDto> GetAllCars()
         {
-            return new[]
-            {
-                new CarDto
-                {
-                    Id = 1,
-                    Brand = "Ford",
-                    Model = "Mondeo",
-                    IsUsed = true,
-                    DateOfLastInspection = DateTime.Parse("16.11.2018 07:22:16"),
-                    Photo = "/WPF.Exercises;component/Resources/Cars/ford-mondeo01.jpg"
-                }
-            };
-        } 
+            return _cars;
+        }
     }
 }

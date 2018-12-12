@@ -76,6 +76,7 @@
     <Compile Include="Framework\INavigationService.cs" />
     <Compile Include="Framework\SimpleNavigationService.cs" />
     <Compile Include="Service\Dto\Car.cs" />
+    <Compile Include="Service\Dto\CarList.cs" />
     <Compile Include="Service\FleetService.cs" />
     <Compile Include="ViewModel\AboutViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -132,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\wpf-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cars\volkswagen-golf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cars\fiat-punto.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
