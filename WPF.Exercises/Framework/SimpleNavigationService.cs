@@ -17,7 +17,8 @@ namespace WPF.Exercises.Framework
         {
             var viewModel = _container.Resolve(typeof(TViewModel)) as TViewModel;
             var view = _container.ResolveNamed<Window>(typeof(TViewModel).Name.Replace("ViewModel", string.Empty)) as Window;
-            view.Show();
+
+            view.ShowDialog();
         }
     }
 }

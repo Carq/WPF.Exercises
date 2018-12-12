@@ -10,6 +10,8 @@ namespace WPF.Exercises.ViewModel
 
         public MainViewModel MainViewModel => _container.Resolve<MainViewModel>();
 
+        public AddNewCarViewModel AddNewCarViewModel => _container.Resolve<AddNewCarViewModel>();
+
         public static void Initialize(IContainer container)
         {
             _container = container;

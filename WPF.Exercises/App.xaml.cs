@@ -42,6 +42,7 @@ namespace WPF.Exercises
         private void RegisterAllViews(ContainerBuilder builder, Assembly currentAssembly)
         {
             builder.RegisterType<About>().Named<Window>(nameof(About));
+            builder.RegisterType<AddNewCar>().Named<Window>(nameof(AddNewCar));
         }
 
         private void RegisterAllViewModels(ContainerBuilder builder, Assembly currentAssembly)

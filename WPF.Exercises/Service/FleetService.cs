@@ -14,6 +14,26 @@ namespace WPF.Exercises.Service
             GenerateFakeData();
         }
 
+        public IList<CarDto> GetAllCars()
+        {
+            return _cars;
+        }
+
+        public void AddNewCar(CarDto carDto)
+        {
+            if (string.IsNullOrWhiteSpace(carDto.Brand))
+            {
+                throw new ArgumentException("Brand cannot be empty");
+            }
+
+            if (string.IsNullOrWhiteSpace(carDto.Model))
+            {
+                throw new ArgumentException("Model cannot be empty");
+            }
+
+            _cars.Add(carDto);
+        }
+
         private void GenerateFakeData()
         {
             var fakeDate = DateTime.Now.AddYears(-1);
@@ -30,11 +50,6 @@ namespace WPF.Exercises.Service
                     IsUsed = i % 2 == 0
                 });
             }
-        }
-
-        public IList<CarDto> GetAllCars()
-        {
-            return _cars;
         }
     }
 }

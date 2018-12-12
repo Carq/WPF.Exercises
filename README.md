@@ -1,69 +1,22 @@
-# Zadanie 2. - Obsługa zdarzeń i walidacja danych
+# Zadanie 3. - Walidacja danych
 
-## 2.1 Wyświetl spis samochodów według poniższego mocka:
+## 3.1 W nowym oknie AddNewCar zaimplementuj funkcjonalność dodawania nowego samochodu.
 
-![2.1](https://i.ibb.co/WVKBhLN/E02-01.png)
+- Po kliknieciu przycisku Add Car na MainWindow otwórz nowe okno AddNewCar
+- Zaimplementuj klase AddNewCarViewModel (widok jest już gotowy) tak aby po kliknięciu Save dodawało nowy samochód
+- Lista samochodów powinna się odświeżyć po zamknieciu okna AddNewCar
 
-- MainViewModel posiada teraz właściwość która jest kolekcją obiektów CarDto typu ObservableCollection - jest ona odpowiedzialna za odświeżanie widoku gdy element zostanie dodany lub usunięty
-- Użyj kontroli DataGrid (opis w Cheet Scheet)
-- Wiersze DataGrid nie powinny być edytowalne
+## 3.2 Dodaj walidacje dla pól Brand i Model
 
-### 2.2 Dodaj Command do przycisków Clear i Load
+- Użyj interface IDataErrorInfo w klasie AddNewCarViewModel
+- Przy nie poprawnych danych guzik Save powinnien być wyszarzony
 
-- Przycisk Clear powinnien usuwać wszystkie samochody z listy
-- Przycisk Load powinnien ładować liste samochodów na nowo
-- Co się dzieje gdy nadpiszamy w ViewModel właściowośc Cars? Dlaczego tak się dzieje?
-
-### 2.4 Przyciski Load i Clean powinny się wyszarzać w określonych warunkach
-
-- Clear ma się wyszarzyć gdy lista samochodów nie jest pusta
-- Load ma się wyszczrzyć gdy lista samochodów posiada chodź jeden element
-
-### 2.5 Dodaj Command do przycisku Add Car
-
-- Przycisk Add Car powinnien dodawać nowy samochód do DataGrid (na razie niech dodaje z zahardcodowanymi danymi)
+## \*3.3 Usuń zależność na klase Window w AddNewCarViewModel (SaveCommand)
 
 # Cheat sheet
 
-## Kontrolka DataGrid
-
-Kolekcje bindujemy do właściwości ItemsSource
+## Włączenie walidacji w XAML
 
 ```xml
-<DataGrid
-    AutoGenerateColumns="False"
-    IsReadOnly="True"
-    ItemsSource="{Binding ...}"
-    SelectionMode="Single">
-    <DataGrid.Columns>
-        <DataGridTextColumn
-            Width="30"
-            Binding="{Binding Name}"
-            Header="Header Name" />
-        <DataGridCheckBoxColumn Binding="{Binding IsBool}" Header="Is bool" />
-    </DataGrid.Columns>
-</DataGrid>
-```
-
-## Użycie commandów
-
-ViewModel
-
-```csharp
-using GalaSoft.MvvmLight.Command;
-...
-public RelayCommand CleanCommand { get; }
-...
-DoThisCommand = new RelayCommand(DoThis);
-...
-private void DoThis()
-{
-    // Do this...
-}
-```
-
-XAML
-
-```xml
-<Button Command="{Binding DoThisCommand, Mode=OneTime}" Content="Click me" />
+<TextBox Text="{Binding Name, ValidatesOnDataErrors=True}" />
 ```
